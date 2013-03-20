@@ -1,4 +1,4 @@
-CC = gcc
+﻿CC = gcc
 CFLAGS = -std=c99
 SRCS = srllist.c srllist.h
 
@@ -13,4 +13,3 @@ valgrind: $(SRCS)
 clean:
 	rm -f *~
 	rm -f ./srllist
-	rm -f *.data

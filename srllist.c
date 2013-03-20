@@ -10,7 +10,7 @@
  *      #make
  * To build debug:
  *      #make debug
- * To clean build and data
+ * To clean build 
  *      #make clean
  *
  * usage:

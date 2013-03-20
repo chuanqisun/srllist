@@ -1,0 +1,7 @@
+﻿I use singly linked list to implement the list abstract data type. While it is more expensive to look up, it saves memory and makes the list easier to maintain.
+
+In memory, I use three levels of abstraction to represent the data structure: File -> List -> Node. I think this approach is natural and intuitive. On file system, I use plain text to store the data. The first line is an integer, showing the number of lines to follow. This is a design to help allocating memory during import. The following lines are sorted lists. If a line starts with 'L', then it is the ID of a list and its nodes are stored in the following lines. I could have used binary representation to save space, but for simplicity and convenience in debugging, I decide to keep the plain text. 
+
+Each time user updates the data structure, the whole file is written into a buffer and flushed immediately. File read happens only when user load the file at the start of program. I don't read files during program simply because the data in the memory isn't too different from the data reloaded from file system (except that the file system data is sequential, but this doesn't affect memory access speed). Reloading requires a lot of new memory allocation, which is also expensive.
+
+I use fixed width integer for ID and data value, making the program more portable. A trade-off is that sscanf is less capable of handling fixed width types.

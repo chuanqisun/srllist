@@ -1,0 +1,107 @@
+Script started on Wed 20 Mar 2013 01:49:06 AM EDT
+]0;d37001n@tpx220:~/dev/commvault/srllist[d37001n@tpx220 srllist]$ make
+gcc -std=c99 -o srllist srllist.c srllist.h
+]0;d37001n@tpx220:~/dev/commvault/srllist[d37001n@tpx220 srllist]$ ./srllist 
+To start program:
+      srllist [filename]
+Existing file will be opened, otherwise, new file is created
+In program:
+      addlist -- create a new list
+      showlist [ID] -- print a given list
+      addnode [ID] [Value] -- add node to list with given ID
+      removenode [ID] [Value] -- remove node from given list
+      removelist [ID] -- remove given list
+      exit -- exit the program
+]0;d37001n@tpx220:~/dev/commvault/srllist[d37001n@tpx220 srllist]$ ./srllist data[K[K[K[Klis[K[K[Kmy_list.dat
+srllist> addlist
+New list added, ID=0
+srllist> addlist
+New list added, ID=1
+srllist> addlist
+New list added, ID=2
+srllist> add   addnode         showlist 0
+srllist> addnode 0 3 4 7
+srllist> addnode 0 3
+srllist> addnode 0 5
+srllist> showlist 0
+3
+5
+7
+srllist> addnode - 3 1
+List doesn't exist!
+srllist> addnode -1 - 0            remove  node            addnode -1  0 -4
+srllist> addnode 0 -8
+srllist> showlsit 0
+To start program:
+      srllist [filename]
+Existing file will be opened, otherwise, new file is created
+In program:
+      addlist -- create a new list
+      showlist [ID] -- print a given list
+      addnode [ID] [Value] -- add node to list with given ID
+      removenode [ID] [Value] -- remove node from given list
+      removelist [ID] -- remove given list
+      exit -- exit the program
+srllist> showlist 0
+-8
+-4
+3
+5
+7
+srllist> remove node     node 3 0 3
+srllist> showlist 0
+-8
+-4
+5
+7
+srllist> removelist 0
+srllist> showlist 0
+List doesn't exist!
+srllist> add   addlist
+New list added, ID=0
+srllist> addlist
+New list added, ID=3
+srllist> exit
+]0;d37001n@tpx220:~/dev/commvault/srllist[d37001n@tpx220 srllist]$ less my_list.dat 
+[?1049h=4
+L0
+L1
+L2
+L3
+[7mmy_list.dat (END)[27m[K[K>[r[?1049l]0;d37001n@tpx220:~/dev/commvault/srllist[d37001n@tpx220 srllist]$ ./
+.git/    srllist  
+[d37001n@tpx220 srllist]$ ./srllist my_list.dat 
+srllist> addlist
+New list added, ID=4
+srllist> addnode 4 2
+srllist> adnode      dnode 4 5
+srllist> d addnode 4 6
+srllist> addnode 5   4 2
+srllist> showlist 4
+2
+2
+5
+6
+srllist> exit    addnode 2 1
+srllist> addnode 1 41
+srllist> addnode - 0 -5
+srllist> addnode 0 -6
+srllist> rev move  list 3
+srllist> exit
+]0;d37001n@tpx220:~/dev/commvault/srllist[d37001n@tpx220 srllist]$ less my_list.dat 
+[?1049h=12
+L0
+-6
+-5
+L1
+41
+L2
+1
+L4
+2
+2
+5
+6
+[7mmy_list.dat (END)[27m[K[K>[r[?1049l]0;d37001n@tpx220:~/dev/commvault/srllist[d37001n@tpx220 srllist]$ exi[K[K[Kexit
+
+Script done on Wed 20 Mar 2013 01:54:38 AM EDT
